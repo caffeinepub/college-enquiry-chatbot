@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "College inquiry chatbot with comprehensive question answering capabilities",
+  "architectural_notes": [
+    "Chatbot interface for college inquiries",
+    "Knowledge base covering admissions, courses, campus information",
+    "Natural language processing for question understanding"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- College campus building illustration in warm academic style for hero section (campus-hero.dim_1200x400.png)\n- Chat bot avatar icon with friendly academic character (chatbot-avatar.dim_80x80.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-chat-interface-component-with-message-history-display-user-input-field-and-send-button-that-supports-conversational-interactions",
+      "title": "Create a chat interface component with message history display, user input field, and send button that supports conversational interactions",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-connect-frontend-chat-interface-to-backend-query-system-so-user-questions-are-processed-and-appropriate-college-information-responses-are-displayed-in-the-conversation",
+      "title": "Connect frontend chat interface to backend query system so user questions are processed and appropriate college information responses are displayed in the conversation",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-cohesive-visual-theme-with-warm-academic-styling-using-earth-tones-greens-browns-creams-combined-with-modern-typography-and-clean-layouts-that-convey-trust-and-professionalism-suitable-for-an-educational-institution",
+      "title": "Design a cohesive visual theme with warm, academic styling using earth tones (greens, browns, creams) combined with modern typography and clean layouts that convey trust and professionalism suitable for an educational institution",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create college inquiry chatbot interface",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add comprehensive college information database (admissions, courses, campus life, etc.)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Implement intelligent question-answer matching system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Implement backend data structure storing comprehensive college information including admissions requirements, available courses and programs, campus facilities and life, application deadlines, tuition fees, scholarship opportunities, contact information, and frequently asked questions",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Build intelligent question-answer matching system that analyzes user questions, identifies relevant topics and keywords, and returns appropriate answers from the college information database",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "College Inquiry Chatbot",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

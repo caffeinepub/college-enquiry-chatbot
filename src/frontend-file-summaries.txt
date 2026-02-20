@@ -1,0 +1,12 @@
+{
+  "frontend/src/index.css": "Global styles with warm academic color palette using earth tones (forest greens, browns, creams) in OKLCH format for both light and dark modes, with custom font configurations and animations.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with custom fonts (Inter, Merriweather, Playfair Display), warm academic color tokens, custom shadows (soft, warm), and fade-in animation for polished UI.",
+  "frontend/src/App.tsx": "Root application component that renders the ChatPage as the main view without routing.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for backend operations including getAllColleges, getCollege, askQuestion, and addCollege with proper state management and cache invalidation.",
+  "frontend/src/hooks/useChat.ts": "Custom hook managing chat state with message history, sending messages to backend via useAskQuestion, and handling loading/error states.",
+  "frontend/src/components/ChatMessage.tsx": "Individual chat message component displaying user and bot messages with distinct styling, avatars, timestamps, and animations.",
+  "frontend/src/components/ChatInput.tsx": "Chat input component with textarea for multi-line input, send button with loading state, and Enter key submission (Shift+Enter for new lines).",
+  "frontend/src/components/ChatInterface.tsx": "Main chat interface component integrating message display with auto-scroll, header section, and input area in a card layout.",
+  "frontend/src/components/Layout.tsx": "Application layout wrapper providing consistent header with college branding, main content area, and footer with attribution link.",
+  "frontend/src/pages/ChatPage.tsx": "Main chat page integrating hero section with campus image, chat interface, college data initialization, and loading/error states."
+}

@@ -1,0 +1,93 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "College Inquiry Chatbot Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create chat interface component with message history, input field, and send button",
+      "acceptanceCriteria": [
+        "Chat interface displays conversation history in a scrollable view",
+        "User can type questions and submit them via button or Enter key",
+        "Messages are clearly distinguished between user and chatbot responses",
+        "Interface is responsive and works on mobile and desktop devices"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ChatInterface.tsx",
+          "operation": "create",
+          "description": "Create main chat interface component with message history display area, scrollable conversation view, user input field with textarea or input element, send button, and Enter key submission handler. Component manages local message state for UI display and provides callbacks for sending messages to parent. Ensure responsive layout for mobile and desktop. Reference generated chatbot-avatar.dim_80x80.png from frontend/public/assets/generated/chatbot-avatar.dim_80x80.png for bot message avatars."
+        },
+        {
+          "path": "frontend/src/components/ChatMessage.tsx",
+          "operation": "create",
+          "description": "Create reusable message component that renders individual chat messages with clear visual distinction between user and chatbot messages (different alignment, colors, or styling). Accept props for message text, sender type (user/bot), and timestamp. Use the chatbot avatar image from frontend/public/assets/generated/chatbot-avatar.dim_80x80.png for bot messages."
+        },
+        {
+          "path": "frontend/src/components/ChatInput.tsx",
+          "operation": "create",
+          "description": "Create chat input component with textarea/input field and send button. Handle Enter key submission (with Shift+Enter for new lines if using textarea). Emit input value to parent component via callback. Include loading state support to disable input during API calls."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Connect chat interface to backend query system for processing questions and displaying responses",
+      "acceptanceCriteria": [
+        "User questions submitted through the chat interface are sent to the backend",
+        "Backend responses are displayed in the chat conversation flow",
+        "Response time is reasonable (under 2 seconds for most queries)",
+        "Error states are handled gracefully with user-friendly messages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useChat.ts",
+          "operation": "create",
+          "description": "Create custom React hook that manages chat state (message history, loading state, error state) and provides functions for sending questions to the backend. Use the backend askQuestion method from backend interface to submit user questions with collegeId parameter. Handle response parsing, error states with user-friendly messages, and update message history with both user question and bot response. Return message array, sendMessage function, loading flag, and error state."
+        },
+        {
+          "path": "frontend/src/pages/ChatPage.tsx",
+          "operation": "create",
+          "description": "Create main chat page component that integrates ChatInterface component with useChat hook. Pass message history, sendMessage handler, loading state, and error state to ChatInterface. Handle college selection (default to first available college or allow user to select). Display error messages in the UI when backend calls fail. Ensure page layout includes the hero section with generated campus-hero.dim_1200x400.png image from frontend/public/assets/generated/campus-hero.dim_1200x400.png at the top of the page."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire ChatPage into the app routing structure. Add route configuration for the chat page as the main application view. Ensure ChatPage is accessible and set as the default route."
+        },
+        {
+          "path": "frontend/src/services/collegeService.ts",
+          "operation": "create",
+          "description": "Create service module that wraps backend interface methods for college-related operations. Include functions for calling askQuestion, getAllColleges, and getCollege from the backend. Handle promise resolution and provide typed return values matching the backend interface types (Query, Response, College). Include error handling and retry logic if needed."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Design cohesive visual theme with warm academic styling using earth tones and modern typography",
+      "acceptanceCriteria": [
+        "Color scheme uses warm, academic tones consistently throughout the interface",
+        "Typography choices enhance readability and convey educational professionalism",
+        "Layout is clean and organized with appropriate spacing and visual hierarchy",
+        "Overall design creates a welcoming and trustworthy impression"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global styles with warm academic color palette using earth tones (greens like #3d5a4d, browns like #8b6f47, creams like #f5f1e8). Define CSS custom properties for primary, secondary, and accent colors. Set modern, readable typography with professional font families (consider serif for headings, sans-serif for body). Establish consistent spacing scale and visual hierarchy utilities."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind configuration with custom color palette matching the warm academic theme (greens, browns, creams). Add custom font family configurations for professional typography. Configure spacing, border radius, and shadow utilities to support clean, organized layouts. Ensure configuration aligns with the earth tone color scheme defined in index.css."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create main layout component that provides consistent page structure with header, main content area, and optional footer. Apply the warm academic theme styling with appropriate background colors, spacing, and typography. Include the hero section with college campus image from frontend/public/assets/generated/campus-hero.dim_1200x400.png. Ensure layout is responsive and maintains clean visual hierarchy."
+        }
+      ]
+    }
+  ]
+}
